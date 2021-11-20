@@ -6,27 +6,27 @@
 
 //#define _CRT_SECURE_NO_WARNINGS
 
-void login(void);  //ÀÇ»çÀÎÁö °£È£»çÀÎÁö È¯ÀÚÀÎÁö ±¸ºĞÇØ¼­ ¹øÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
-void join(void);  //È¯ÀÚ°¡ È¸¿ø°¡ÀÔÀ» ÇÒ ¼ö ÀÖ°Ô ¸¸µç ÇÔ¼ö.
-void patient_view(char* patient_ID);   //È¯ÀÚ ºä¸¦ º¸¿©ÁØ´Ù.
-void doctor_view(char* doctor_ID);    //ÀÇ»ç ºä¸¦ º¸¿©ÁØ´Ù.
+void login(void);  //ì˜ì‚¬ì¸ì§€ ê°„í˜¸ì‚¬ì¸ì§€ í™˜ìì¸ì§€ êµ¬ë¶„í•´ì„œ ë²ˆí˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
+void join(void);  //í™˜ìê°€ íšŒì›ê°€ì…ì„ í•  ìˆ˜ ìˆê²Œ ë§Œë“  í•¨ìˆ˜.
+void patient_view(char* patient_ID);   //í™˜ì ë·°ë¥¼ ë³´ì—¬ì¤€ë‹¤.
+void doctor_view(char* doctor_ID);    //ì˜ì‚¬ ë·°ë¥¼ ë³´ì—¬ì¤€ë‹¤.
 void insert_result();
-void Doctor_R_R(char* doctor_ID);     //¿¹¾àµÈ È¯ÀÚ ¸ñ·ÏÀ» º¸¿©ÁØ´Ù.
-void Patient_R_R(char* doctor_ID);    //È¯ÀÚ°¡ ÀÇ»çÀÇ ¿¹¾à ½Ã°£À» º»´Ù.
-void Room_R_R(char* room_num);        //È¯ÀÚ°¡ ¹æ ÀÔ¿ø ÇöÈ²À» º»´Ù.
-void nurse_view(char* nurse_ID);     //°£È£»ç ºä¸¦ º¸¿©ÁØ´Ù.
-void insert_bill();                  //°Ë»çºñ¿ë ÀÔ·Â.
-void insert_Hbill();                  //ÀÔ¿øºñ¿ë ÀÔ·Â.
-char* compare_exist(char* ID);        //¾ÆÀÌµğ°¡ Á¸ÀçÇÏ´ÂÁö ºñ±³ÇÏ´Â ÇÔ¼ö
+void Doctor_R_R(char* doctor_ID);     //ì˜ˆì•½ëœ í™˜ì ëª©ë¡ì„ ë³´ì—¬ì¤€ë‹¤.
+void Patient_R_R(char* doctor_ID);    //í™˜ìê°€ ì˜ì‚¬ì˜ ì˜ˆì•½ ì‹œê°„ì„ ë³¸ë‹¤.
+void Room_R_R(char* room_num);        //í™˜ìê°€ ë°© ì…ì› í˜„í™©ì„ ë³¸ë‹¤.
+void nurse_view(char* nurse_ID);     //ê°„í˜¸ì‚¬ ë·°ë¥¼ ë³´ì—¬ì¤€ë‹¤.
+void insert_bill();                  //ê²€ì‚¬ë¹„ìš© ì…ë ¥.
+void insert_Hbill();                  //ì…ì›ë¹„ìš© ì…ë ¥.
+char* compare_exist(char* ID);        //ì•„ì´ë””ê°€ ì¡´ì¬í•˜ëŠ”ì§€ ë¹„êµí•˜ëŠ” í•¨ìˆ˜
 void patient_view1(void);
-void patient_view2(char* patient_ID);// È¯ÀÚÀÇ ºä µÎ¹øÂ° ÇÔ¼ö ¿¹¾à ½Ã°£ È®ÀÎ
+void patient_view2(char* patient_ID);// í™˜ìì˜ ë·° ë‘ë²ˆì§¸ í•¨ìˆ˜ ì˜ˆì•½ ì‹œê°„ í™•ì¸
 void patient_view3(char* patient_ID);
 void patient_view4(char* patient_ID);
 void patient_view5(char* patient_ID);
 void patient_view8(char* patient_ID);
 void patient_view9(char* patient_ID);
-void treat_res(char* doctor_ID);   //È¯ÀÚ°¡ Áø·á ¿¹¾àÇÏ´Â ÇÔ¼ö
-void hospital_res(char* room_num);  //È¯ÀÚ°¡ ÀÔ¿ø½ÇÀ» ¿¹¾àÇÏ´Â ÇÔ¼ö
+void treat_res(char* doctor_ID);   //í™˜ìê°€ ì§„ë£Œ ì˜ˆì•½í•˜ëŠ” í•¨ìˆ˜
+void hospital_res(char* room_num);  //í™˜ìê°€ ì…ì›ì‹¤ì„ ì˜ˆì•½í•˜ëŠ” í•¨ìˆ˜
 
 MYSQL mysql;
 
@@ -44,17 +44,17 @@ int main(void) {
 
 		if (!mysql_real_connect(&mysql, host, user, pwd, db, 3306, NULL, 0)) {
 
-			printf("****************¿¬°á ½ÇÆĞ****************\n");
+			printf("****************ì—°ê²° ì‹¤íŒ¨****************\n");
 		}
 		else {
 			printf("\n");
 			printf("\n");
 			printf("\n");
 			printf("\t\t\t************cheil hospital ************\n");
-			printf("\t\t\t1. ·Î±×ÀÎ\n");
-			printf("\t\t\t2. È¸¿ø °¡ÀÔ\n");
-			printf("\t\t\t3. Á¾·á \n");
-			printf("\t\t\t¿øÇÏ´Â ¸Ş´º¸¦ ¼±ÅÃÇÏ¼¼¿ä : ");
+			printf("\t\t\t1. ë¡œê·¸ì¸\n");
+			printf("\t\t\t2. íšŒì› ê°€ì…\n");
+			printf("\t\t\t3. ì¢…ë£Œ \n");
+			printf("\t\t\tì›í•˜ëŠ” ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš” : ");
 			scanf("%d", &login_num);
 
 			switch (login_num) {
@@ -65,11 +65,11 @@ int main(void) {
 				join();
 				break;
 			case 3:
-				printf("****************Á¾    ·á****************\n");
+				printf("****************ì¢…    ë£Œ****************\n");
 				exit(1);
 			}
 		}
-		printf("****************Á¾    ·á****************\n");
+		printf("****************ì¢…    ë£Œ****************\n");
 		exit(1);
 	}
 
@@ -89,15 +89,15 @@ void join(void) {
 	char qry_age[150];
 	char qry_END[200];
 
-	printf("ID ¸¦ ÀÔ·ÂÇÏ½Ã¿À(¼ıÀÚ1·Î ½ÃÀÛÇÏ´Â 10ÀÚ¸® ¼ö): ");
+	printf("ID ë¥¼ ì…ë ¥í•˜ì‹œì˜¤(ìˆ«ì1ë¡œ ì‹œì‘í•˜ëŠ” 10ìë¦¬ ìˆ˜): ");
 	scanf("%s", qry_ID);
-	printf("ÀÌ¸§À» ÀÔ·ÂÇÏ½Ã¿À(¿µ¾î ÀÌ¸§): ");
+	printf("ì´ë¦„ì„ ì…ë ¥í•˜ì‹œì˜¤(ì˜ì–´ ì´ë¦„): ");
 	scanf("%s", qry_name);
-	printf("¼ºº°À» (¿©ÀÚ: W, ³²ÀÚ: M): ");
+	printf("ì„±ë³„ì„ (ì—¬ì: W, ë‚¨ì: M): ");
 	scanf("%s", qry_sex);
-	printf("Áõ»óÀ» ÀÔ·ÂÇÏ½Ã¿À(¿µ¾î Áõ»ó): ");
+	printf("ì¦ìƒì„ ì…ë ¥í•˜ì‹œì˜¤(ì˜ì–´ ì¦ìƒ): ");
 	scanf("%s", qry_disease);
-	printf("³ªÀÌ ¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");
+	printf("ë‚˜ì´ ë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");
 	scanf("%s", qry_age);
 
 
@@ -109,7 +109,7 @@ void join(void) {
 		printf("send query err");
 	}
 
-	printf("µ¹¾Æ°¡·Á¸é x ¸¦ ÀÔ·ÂÇÏ½Ã¿À :");
+	printf("ëŒì•„ê°€ë ¤ë©´ x ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ :");
 	while (1) {
 		scanf("%c", &ch);
 		if (ch == 'x') {
@@ -129,8 +129,8 @@ void login(void) {
 		printf("\n");
 		printf("\n");
 
-		printf("\t\t\t****************·Î±×ÀÎ È­¸é****************\n");
-		printf("\t\t\tID ¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+		printf("\t\t\t****************ë¡œê·¸ì¸ í™”ë©´****************\n");
+		printf("\t\t\tID ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ : ");
 		compare_ID = (char*)malloc(sizeof(char) * 20);
 		ID = (char*)malloc(sizeof(char) * 20);
 		scanf("%s", ID);
@@ -157,14 +157,14 @@ void login(void) {
 	}
 }
 void patient_view(char* patient_ID) {
-	int choice_num;   //È¯ÀÚ°¡ ¸Ş´º¸¦ ¼±ÅÃÇÒ ¶§ ÀúÀåÇÏ´Â º¯¼ö
+	int choice_num;   //í™˜ìê°€ ë©”ë‰´ë¥¼ ì„ íƒí•  ë•Œ ì €ì¥í•˜ëŠ” ë³€ìˆ˜
 	char* qry;
 	char ch;
 	char qry2[150];
 	int row_length, cloum_length;
 	char* ID;
 	qry = "select P_name from patient where patient_ID = ";
-	sprintf(qry2, "%s %s", qry, patient_ID);    //È¯ÀÚÀÌ¸§À» °¡Á®¿È
+	sprintf(qry2, "%s %s", qry, patient_ID);    //í™˜ìì´ë¦„ì„ ê°€ì ¸ì˜´
 
 	if (mysql_real_query(&mysql, qry2, strlen(qry2))) {
 		printf("send query err");
@@ -184,45 +184,45 @@ void patient_view(char* patient_ID) {
 		printf("\n");
 		printf("\n");
 		printf("\n");
-		printf("\t\t\t************ %s ************\n", ID);   //~~´Ô È¯¿µÇÕ´Ï´Ù.¶ó°í ¶ß°Ô È¯ÀÚÀÌ¸§ ¹Ş¾Æ¿Í¾ßÇÔ
-		printf("\t\t\t1. ÀÇ»ç »ó´ã °¡´É ½Ã°£ È®ÀÎ ¹× ¿¹¾à\n");
-		printf("\t\t\t2. ÀÔ¿ø ¿¹¾à °¡´É ³¯ È®ÀÎ ¹× ¿¹¾à\n");
-		printf("\t\t\t3. ÀÇ»ç »ó´ã ¿¹¾à Á¶È¸\n");
-		printf("\t\t\t4. ÀÔ¿ø ¿¹¾à Á¶È¸\n");
-		printf("\t\t\t5. °Ë»ç °á°ú È®ÀÎ \n");
-		printf("\t\t\t6. Áø´Ü ºñ¿ë È®ÀÎ \n");
-		printf("\t\t\t7. ÀÔ¿ø ºñ¿ë È®ÀÎ \n");
-		printf("\t\t\t8. Á¾·á \n");
-		printf("\t\t\t¿øÇÏ´Â ¸Ş´º¸¦ ¼±ÅÃÇÏ¼¼¿ä : ");
+		printf("\t\t\t************ %s ************\n", ID);   //~~ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤.ë¼ê³  ëœ¨ê²Œ í™˜ìì´ë¦„ ë°›ì•„ì™€ì•¼í•¨
+		printf("\t\t\t1. ì˜ì‚¬ ìƒë‹´ ê°€ëŠ¥ ì‹œê°„ í™•ì¸ ë° ì˜ˆì•½\n");
+		printf("\t\t\t2. ì…ì› ì˜ˆì•½ ê°€ëŠ¥ ë‚  í™•ì¸ ë° ì˜ˆì•½\n");
+		printf("\t\t\t3. ì˜ì‚¬ ìƒë‹´ ì˜ˆì•½ ì¡°íšŒ\n");
+		printf("\t\t\t4. ì…ì› ì˜ˆì•½ ì¡°íšŒ\n");
+		printf("\t\t\t5. ê²€ì‚¬ ê²°ê³¼ í™•ì¸ \n");
+		printf("\t\t\t6. ì§„ë‹¨ ë¹„ìš© í™•ì¸ \n");
+		printf("\t\t\t7. ì…ì› ë¹„ìš© í™•ì¸ \n");
+		printf("\t\t\t8. ì¢…ë£Œ \n");
+		printf("\t\t\tì›í•˜ëŠ” ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš” : ");
 		scanf("%d", &choice_num);
 		switch (choice_num) {
 		case 1:
 			system("cls");
-			patient_view1();//ÀÇ»ç ¿¹¾à¸ñ·Ï »Ì¾Æ³»´Â Äõ¸®¸¦ °¡Áø ÇÔ¼ö
+			patient_view1();//ì˜ì‚¬ ì˜ˆì•½ëª©ë¡ ë½‘ì•„ë‚´ëŠ” ì¿¼ë¦¬ë¥¼ ê°€ì§„ í•¨ìˆ˜
 			break;
 		case 2:
 			system("cls");
-			patient_view9(patient_ID);   //ÀÔ¿ø ¿¹¾à °¡´ÉÇÑ ³¯À» º¼ ¼ö ÀÖ´Ù.¿¹¾àµµ °¡´É
+			patient_view9(patient_ID);   //ì…ì› ì˜ˆì•½ ê°€ëŠ¥í•œ ë‚ ì„ ë³¼ ìˆ˜ ìˆë‹¤.ì˜ˆì•½ë„ ê°€ëŠ¥
 			break;
 		case 3:
 			system("cls");
-			patient_view2(patient_ID);   //¿¹¾à ½Ã°£ È®ÀÎÇÏ´Â ÇÔ¼ö
+			patient_view2(patient_ID);   //ì˜ˆì•½ ì‹œê°„ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
 			break;
 		case 4:
 			system("cls");
-			patient_view8(patient_ID);     //ÀÔ¿ø ¿¹¾à È®ÀÎ
+			patient_view8(patient_ID);     //ì…ì› ì˜ˆì•½ í™•ì¸
 			break;
 		case 5:
 			system("cls");
-			patient_view3(patient_ID);//È¯ÀÚÀÇ °Ë»ç °á°ú °¡Á®¿Í¼­ Ãâ·ÂÇÏ´Â ÇÔ¼ö
+			patient_view3(patient_ID);//í™˜ìì˜ ê²€ì‚¬ ê²°ê³¼ ê°€ì ¸ì™€ì„œ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜
 			break;
 		case 6:
 			system("cls");
-			patient_view4(patient_ID);//È¯ÀÚÀÇ º´¿øºñ¸¦ °¡Á®¿Í¼­ Ãâ·ÂÇÏ´Â ÇÔ¼ö
+			patient_view4(patient_ID);//í™˜ìì˜ ë³‘ì›ë¹„ë¥¼ ê°€ì ¸ì™€ì„œ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜
 			break;
 		case 7:
 			system("cls");
-			patient_view5(patient_ID);//È¯ÀÚÀÇ ÀÔ¿ø ºñ¿ëÀ» °¡Á®¿Í¼­ Ãâ·ÂÇÏ´Â ÇÔ¼ö
+			patient_view5(patient_ID);//í™˜ìì˜ ì…ì› ë¹„ìš©ì„ ê°€ì ¸ì™€ì„œ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜
 			break;
 		case 8:
 			exit(1);
@@ -250,20 +250,20 @@ void patient_view1() {
 	//cloum_length = mysql_num_fields(res);
 	//row_length = mysql_num_rows(res);
 	system("cls");
-	printf("***  ÀÇ»ç ÀÌ¸§   ***   Áø·á°ú   ***\n");
+	printf("***  ì˜ì‚¬ ì´ë¦„   ***   ì§„ë£Œê³¼   ***\n");
 	while (row = mysql_fetch_row(res)) {
 		printf("***  %d.   %5s           ***    %10s    ***\n", i, row[0], row[1]);
 		doc_choice_ID[i] = row[2];
 		i++;
 	}
 	while (1) {
-		printf("ÀÇ»ç¸¦ ¼±ÅÃÇÏ½Ã¿À (³ª°¡±â = 9): ");
+		printf("ì˜ì‚¬ë¥¼ ì„ íƒí•˜ì‹œì˜¤ (ë‚˜ê°€ê¸° = 9): ");
 		scanf("%d", &doc_choice);
 		if (doc_choice == 9) {
 			system("cls");
 			break;
 		}
-		Patient_R_R(doc_choice_ID[doc_choice]);   //ÀÇ»ç¸¦ ¼±ÅÃÇØ¼­ ¿¹¾à³»¿ªÀ» È®ÀÎÇÒ ¼öÀÖ´Ù.
+		Patient_R_R(doc_choice_ID[doc_choice]);   //ì˜ì‚¬ë¥¼ ì„ íƒí•´ì„œ ì˜ˆì•½ë‚´ì—­ì„ í™•ì¸í•  ìˆ˜ìˆë‹¤.
 	}
 }
 void patient_view2(char* patient_ID) {
@@ -287,11 +287,11 @@ void patient_view2(char* patient_ID) {
 	row_length = mysql_num_rows(res);
 
 	system("cls");
-	printf("***  ¿¹¾à ½ÃÀÛ ½Ã°£   ***   ¿¹¾à  Á¾·á  ½Ã°£   ***   ÀÇ»ç ÀÌ¸§   ***\n");
+	printf("***  ì˜ˆì•½ ì‹œì‘ ì‹œê°„   ***   ì˜ˆì•½  ì¢…ë£Œ  ì‹œê°„   ***   ì˜ì‚¬ ì´ë¦„   ***\n");
 	while (row = mysql_fetch_row(res)) {
 		printf("***   %5s           ***   %10s         ***   %10s    ***\n", row[0], row[1], row[2]);
 	}
-	printf("µ¹¾Æ°¡·Á¸é x ¸¦ ÀÔ·ÂÇÏ½Ã¿À :");
+	printf("ëŒì•„ê°€ë ¤ë©´ x ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ :");
 	while (1) {
 		scanf("%c", &ch);
 		if (ch == 'x') {
@@ -322,12 +322,12 @@ void patient_view3(char* patient_ID) {
 	row_length = mysql_num_rows(res);
 
 	system("cls");
-	printf("***  °Ë»ç °á°ú   ***  Ä¡·á ÇÊ¿ä ¿©ºÎ  ***\n");
+	printf("***  ê²€ì‚¬ ê²°ê³¼   ***  ì¹˜ë£Œ í•„ìš” ì—¬ë¶€  ***\n");
 	while (row = mysql_fetch_row(res)) {
 		printf("***   %5s      ***   %5s   ***\n", row[0], row[1]);
 	}
 	while (1) {
-		printf("µ¹¾Æ°¡·Á¸é 9 ¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+		printf("ëŒì•„ê°€ë ¤ë©´ 9 ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ : ");
 		scanf("%d", &ch);
 		if (ch == 9) {
 			break;
@@ -356,11 +356,11 @@ void patient_view4(char* patient_ID) {
 	row_length = mysql_num_rows(res);
 
 	system("cls");
-	printf("***   º´¿øºñ  ***\n");
+	printf("***   ë³‘ì›ë¹„  ***\n");
 	while (row = mysql_fetch_row(res)) {
-		printf("***   %5s¿ø    ***\n", row[0]);
+		printf("***   %5sì›    ***\n", row[0]);
 	}
-	printf("µ¹¾Æ°¡·Á¸é x ¸¦ ÀÔ·ÂÇÏ½Ã¿À :");
+	printf("ëŒì•„ê°€ë ¤ë©´ x ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ :");
 	while (1) {
 		scanf("%c", &ch);
 		if (ch == 'x') {
@@ -390,11 +390,11 @@ void patient_view5(char* patient_ID) {
 	//row_length = mysql_num_rows(res);
 
 	system("cls");
-	printf("***   ÀÔ¿øºñ  ***\n");
+	printf("***   ì…ì›ë¹„  ***\n");
 	while (row = mysql_fetch_row(res)) {
-		printf("***   %5s¿ø    ***\n", row[0]);
+		printf("***   %5sì›    ***\n", row[0]);
 	}
-	printf("µ¹¾Æ°¡·Á¸é x ¸¦ ÀÔ·ÂÇÏ½Ã¿À :");
+	printf("ëŒì•„ê°€ë ¤ë©´ x ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ :");
 	while (1) {
 		scanf("%c", &ch);
 		if (ch == 'x') {
@@ -424,11 +424,11 @@ void patient_view8(char* patient_ID) {
 	//row_length = mysql_num_rows(res);
 
 	system("cls");
-	printf("***  ¿¹¾à ½ÃÀÛ ³¯Â¥   ***   ¿¹¾à  Á¾·á  ³¯Â¥   ***   ¹æ ¹øÈ£   ***\n");
+	printf("***  ì˜ˆì•½ ì‹œì‘ ë‚ ì§œ   ***   ì˜ˆì•½  ì¢…ë£Œ  ë‚ ì§œ   ***   ë°© ë²ˆí˜¸   ***\n");
 	while (row = mysql_fetch_row(res)) {
 		printf("***   %5s           ***   %10s         ***   %10s    ***\n", row[0], row[1], row[2]);
 	}
-	printf("µ¹¾Æ°¡·Á¸é x ¸¦ ÀÔ·ÂÇÏ½Ã¿À :");
+	printf("ëŒì•„ê°€ë ¤ë©´ x ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ :");
 	while (1) {
 		scanf("%c", &ch);
 		if (ch == 'x') {
@@ -461,18 +461,18 @@ void patient_view9(char* patient_ID) {
 	//cloum_length = mysql_num_fields(res);
 	//row_length = mysql_num_rows(res);
 	system("cls");
-	printf("***  ¹æ ¹øÈ£   ***   °Ç¹° ¹øÈ£   ***\n");
+	printf("***  ë°© ë²ˆí˜¸   ***   ê±´ë¬¼ ë²ˆí˜¸   ***\n");
 	while (row = mysql_fetch_row(res)) {
 		printf("***  %d.   %5s           ***    %10s    ***\n", i, row[0], row[1]);
 		room_choice_ID[i] = row[0];
 		i++;
 	}
-	printf("¹æÀ» ¼±ÅÃÇÏ½Ã¿À : ");
+	printf("ë°©ì„ ì„ íƒí•˜ì‹œì˜¤ : ");
 	scanf("%d", &doc_choice);
 	room_num = room_choice_ID[doc_choice];
-	Room_R_R(room_choice_ID[doc_choice]);    //ÇØ´ç ¹æÀÇ ¿¹¾àÇöÈ²À»º¸¿©ÁØ´Ù.
+	Room_R_R(room_choice_ID[doc_choice]);    //í•´ë‹¹ ë°©ì˜ ì˜ˆì•½í˜„í™©ì„ë³´ì—¬ì¤€ë‹¤.
 
-	printf("µ¹¾Æ°¡·Á¸é x ¸¦ ÀÔ·ÂÇÏ½Ã¿À :");
+	printf("ëŒì•„ê°€ë ¤ë©´ x ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ :");
 	while (1) {
 		scanf("%c", &ch);
 		if (ch == 'x') {
@@ -482,14 +482,14 @@ void patient_view9(char* patient_ID) {
 	}
 }
 void doctor_view(char* doctor_ID) {
-	int choice_num;   //ÀÇ»ç°¡ ¸Ş´º¸¦ ¼±ÅÃÇÒ ¶§ ÀúÀåÇÏ´Â º¯¼ö
+	int choice_num;   //ì˜ì‚¬ê°€ ë©”ë‰´ë¥¼ ì„ íƒí•  ë•Œ ì €ì¥í•˜ëŠ” ë³€ìˆ˜
 	char* qry;
 	char ch;
 	char qry2[150];
 	int row_length, cloum_length;
 	char* ID;
 	qry = "select D_name from doctor where doctor_ID = ";
-	sprintf(qry2, "%s %s", qry, doctor_ID);    //ÀÇ»ç ¾ÆÀÌµğ¸¦ ºñ±³ÇÏ¿© ÀÇ»ç ÀÌ¸§À» °¡Á®¿À´Â Äõ¸®
+	sprintf(qry2, "%s %s", qry, doctor_ID);    //ì˜ì‚¬ ì•„ì´ë””ë¥¼ ë¹„êµí•˜ì—¬ ì˜ì‚¬ ì´ë¦„ì„ ê°€ì ¸ì˜¤ëŠ” ì¿¼ë¦¬
 
 	if (mysql_real_query(&mysql, qry2, strlen(qry2))) {
 		printf("send query err");
@@ -508,19 +508,19 @@ void doctor_view(char* doctor_ID) {
 		printf("\n");
 		printf("\n");
 		printf("\n");
-		printf("\t\t\t************ %s ************\n", ID);   //ÀÇ»ç ¾ÆÀÌµğ ÀÇ»ç ÀÌ¸§ »Ì¾Æ¿Í¼­ Ãâ·ÂÇÏ±â
-		printf("\t\t\t1. È¯ÀÚ Áø´Ü °á°ú ÀÔ·Â\n");
-		printf("\t\t\t2. È¯ÀÚ ¿¹¾à ³»¿ª È®ÀÎ\n");
-		printf("\t\t\t3. Á¾·á \n");
-		printf("\t\t\t¿øÇÏ´Â ¸Ş´º¸¦ ¼±ÅÃÇÏ¼¼¿ä : ");
+		printf("\t\t\t************ %s ************\n", ID);   //ì˜ì‚¬ ì•„ì´ë”” ì˜ì‚¬ ì´ë¦„ ë½‘ì•„ì™€ì„œ ì¶œë ¥í•˜ê¸°
+		printf("\t\t\t1. í™˜ì ì§„ë‹¨ ê²°ê³¼ ì…ë ¥\n");
+		printf("\t\t\t2. í™˜ì ì˜ˆì•½ ë‚´ì—­ í™•ì¸\n");
+		printf("\t\t\t3. ì¢…ë£Œ \n");
+		printf("\t\t\tì›í•˜ëŠ” ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš” : ");
 		scanf("%d", &choice_num);
 		switch (choice_num) {
 		case 1:
 			system("cls");
-			insert_result();    //È¯ÀÚÀÇ Áø´Ü °á°ú¸¦ ÀÔ·ÂÇÏ´Â ÇÔ¼ö
+			insert_result();    //í™˜ìì˜ ì§„ë‹¨ ê²°ê³¼ë¥¼ ì…ë ¥í•˜ëŠ” í•¨ìˆ˜
 		case 2:
 			system("cls");
-			Doctor_R_R(doctor_ID);    //ÇØ´ç ÀÇ»çÀÇ È¯ÀÚ ¿¹¾à ³»¿ªÀ» Ãâ·ÂÇÏ´Â ÇÔ¼ö
+			Doctor_R_R(doctor_ID);    //í•´ë‹¹ ì˜ì‚¬ì˜ í™˜ì ì˜ˆì•½ ë‚´ì—­ì„ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜
 		case 3:
 			exit(1);
 		}
@@ -543,10 +543,10 @@ void insert_result() {
 	qry_END = (char*)malloc(sizeof(char) * 100);
 
 	qry_bill = "0";
-	printf("Ä¡·á ÇÊ¿ä ¿©ºÎ¸¦ ÀÔ·ÂÇÏ¼¼¿ä :");
+	printf("ì¹˜ë£Œ í•„ìš” ì—¬ë¶€ë¥¼ ì…ë ¥í•˜ì„¸ìš” :");
 	scanf("%s", qry_result);
 	qry_Hbill = "0";
-	printf("È¯ÀÚ ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+	printf("í™˜ì ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 	scanf("%s", qry_PID);
 
 
@@ -560,7 +560,7 @@ void insert_result() {
 		printf("send query err");
 	}
 
-	printf("µ¹¾Æ°¡·Á¸é x ¸¦ ÀÔ·ÂÇÏ½Ã¿À :");
+	printf("ëŒì•„ê°€ë ¤ë©´ x ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ :");
 	while (1) {
 		scanf("%c", &ch);
 		if (ch == 'x') {
@@ -569,7 +569,7 @@ void insert_result() {
 		}
 	}
 }
-void Doctor_R_R(char* doctor_ID) {  //ÀÚ½Å¿¡°Ô ¿¹¾àµÈ È¯ÀÚ Ãâ·Â
+void Doctor_R_R(char* doctor_ID) {  //ìì‹ ì—ê²Œ ì˜ˆì•½ëœ í™˜ì ì¶œë ¥
 	int row_length, cloum_length;
 	int i = 0;
 	char* qry;
@@ -589,11 +589,11 @@ void Doctor_R_R(char* doctor_ID) {  //ÀÚ½Å¿¡°Ô ¿¹¾àµÈ È¯ÀÚ Ãâ·Â
 	cloum_length = mysql_num_fields(res);
 	row_length = mysql_num_rows(res);
 	system("cls");
-	printf("***  ¿¹¾à ½ÃÀÛ ½Ã°£   ***   ¿¹¾à  Á¾·á  ½Ã°£   ***   È¯ÀÚ ¾ÆÀÌµğ   ***\n");
+	printf("***  ì˜ˆì•½ ì‹œì‘ ì‹œê°„   ***   ì˜ˆì•½  ì¢…ë£Œ  ì‹œê°„   ***   í™˜ì ì•„ì´ë””   ***\n");
 	while (row = mysql_fetch_row(res)) {
 		printf("***   %5s           ***   %10s         ***   %10s    ***\n", row[0], row[1], row[2]);
 	}
-	printf("µ¹¾Æ°¡·Á¸é x ¸¦ ÀÔ·ÂÇÏ½Ã¿À :");
+	printf("ëŒì•„ê°€ë ¤ë©´ x ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ :");
 	while (1) {
 		scanf("%c", &ch);
 		if (ch == 'x') {
@@ -622,11 +622,11 @@ void Patient_R_R(char* doctor_ID) {
 	cloum_length = mysql_num_fields(res);
 	row_length = mysql_num_rows(res);
 	//system("cls");
-	printf("***  ¿¹¾à ½ÃÀÛ ½Ã°£   ***   ¿¹¾à  Á¾·á  ½Ã°£   ***\n");
+	printf("***  ì˜ˆì•½ ì‹œì‘ ì‹œê°„   ***   ì˜ˆì•½  ì¢…ë£Œ  ì‹œê°„   ***\n");
 	while (row = mysql_fetch_row(res)) {
 		printf("***   %5s           ***      %10s         ***\n", row[0], row[1]);
 	}
-	printf("¿¹¾àÇÏ½Ã·Á¸é 1, µ¹¾Æ°¡·Á¸é x ¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("ì˜ˆì•½í•˜ì‹œë ¤ë©´ 1, ëŒì•„ê°€ë ¤ë©´ x ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	while (1) {
 		scanf("%c", &ch);
 		if (ch == 'x') {
@@ -653,10 +653,10 @@ void treat_res(char* doctor_ID) {
 	//qry_D_ID = (char *)malloc(sizeof(char) * 100);
 
 
-	printf("ÀÚ½ÅÀÇ ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("ìì‹ ì˜ ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	scanf("%s", qry_ID);
 	//qry_D_ID = doctor_ID;
-	printf("¿¹¾à ½Ã°£À» ÀÔ·ÂÇÏ½Ã¿À :");
+	printf("ì˜ˆì•½ ì‹œê°„ì„ ì…ë ¥í•˜ì‹œì˜¤ :");
 	scanf("%d", &qry_start_time);
 	qry_end_time = qry_start_time + 1;
 
@@ -669,7 +669,7 @@ void treat_res(char* doctor_ID) {
 		printf("send query err");
 	}
 
-	printf("µ¹¾Æ°¡·Á¸é x ¸¦ ÀÔ·ÂÇÏ½Ã¿À :");
+	printf("ëŒì•„ê°€ë ¤ë©´ x ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ :");
 	while (1) {
 		scanf("%c", &ch);
 		if (ch == 'x') {
@@ -692,12 +692,12 @@ void hospital_res(char* room_num) {
 	//qry_D_ID = (char *)malloc(sizeof(char) * 100);
 
 
-	printf("ÀÚ½ÅÀÇ ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("ìì‹ ì˜ ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	scanf("%s", qry_ID);
 	//qry_D_ID = doctor_ID;
-	printf("¿¹¾à ³¯Â¥¸¦ ÀÔ·ÂÇÏ½Ã¿À :");
+	printf("ì˜ˆì•½ ë‚ ì§œë¥¼ ì…ë ¥í•˜ì‹œì˜¤ :");
 	scanf("%d", &qry_start_time);
-	printf("¸¶Áö¸· ÀÔ¿ø ³¯Â¥¸¦ ÀÔ·ÂÇÏ½Ã¿À :");
+	printf("ë§ˆì§€ë§‰ ì…ì› ë‚ ì§œë¥¼ ì…ë ¥í•˜ì‹œì˜¤ :");
 	scanf("%d", &qry_end_time);
 
 
@@ -709,7 +709,7 @@ void hospital_res(char* room_num) {
 		printf("send query err");
 	}
 
-	printf("µ¹¾Æ°¡·Á¸é x ¸¦ ÀÔ·ÂÇÏ½Ã¿À :");
+	printf("ëŒì•„ê°€ë ¤ë©´ x ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ :");
 	while (1) {
 		scanf("%c", &ch);
 		if (ch == 'x') {
@@ -739,11 +739,11 @@ void Room_R_R(char* room_num) {
 	row_length = mysql_num_rows(res);
 
 	system("cls");
-	printf("***  ¿¹¾à ½ÃÀÛ ³¯Â¥   ***   ¿¹¾à  Á¾·á  ³¯Â¥   ***\n");
+	printf("***  ì˜ˆì•½ ì‹œì‘ ë‚ ì§œ   ***   ì˜ˆì•½  ì¢…ë£Œ  ë‚ ì§œ   ***\n");
 	while (row = mysql_fetch_row(res)) {
 		printf("***   %5s           ***      %10s         ***\n", row[0], row[1]);
 	}
-	printf("¿¹¾à ÇÏ½Ã·Á¸é 1, µ¹¾Æ°¡·Á¸é x ¸¦ ÀÔ·ÂÇÏ½Ã¿À :");
+	printf("ì˜ˆì•½ í•˜ì‹œë ¤ë©´ 1, ëŒì•„ê°€ë ¤ë©´ x ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ :");
 	while (1) {
 		scanf("%c", &ch);
 		if (ch == 'x') {
@@ -752,13 +752,13 @@ void Room_R_R(char* room_num) {
 		}
 		else if (ch == '1') {
 			system("cls");
-			hospital_res(room_num);    //ÇØ´ç ¹æ¿¡´ëÇÑ ¿¹¾àÀ» ÇÒ ¼ö ÀÖ°Ô ÇØÁÖ´Â ÇÔ¼ö
+			hospital_res(room_num);    //í•´ë‹¹ ë°©ì—ëŒ€í•œ ì˜ˆì•½ì„ í•  ìˆ˜ ìˆê²Œ í•´ì£¼ëŠ” í•¨ìˆ˜
 			break;
 		}
 	}
 }
 void nurse_view(char* nurse_ID) {
-	int choice_num;   //È¯ÀÚ°¡ ¸Ş´º¸¦ ¼±ÅÃÇÒ ¶§ ÀúÀåÇÏ´Â º¯¼ö
+	int choice_num;   //í™˜ìê°€ ë©”ë‰´ë¥¼ ì„ íƒí•  ë•Œ ì €ì¥í•˜ëŠ” ë³€ìˆ˜
 	char* qry;
 	char ch;
 	char qry2[150];
@@ -766,7 +766,7 @@ void nurse_view(char* nurse_ID) {
 	char* ID;
 	qry = "select N_name from nulse where nulse_ID = ";
 
-	sprintf(qry2, "%s %s", qry, nurse_ID);    //°£È£»ç ¾ÆÀÌµğ¸¦ ºñ±³ÇÏ¿© °£È£»ç ÀÌ¸§À» °¡Á®¿À´Â Äõ¸®
+	sprintf(qry2, "%s %s", qry, nurse_ID);    //ê°„í˜¸ì‚¬ ì•„ì´ë””ë¥¼ ë¹„êµí•˜ì—¬ ê°„í˜¸ì‚¬ ì´ë¦„ì„ ê°€ì ¸ì˜¤ëŠ” ì¿¼ë¦¬
 
 	if (mysql_real_query(&mysql, qry2, strlen(qry2))) {
 		printf("send query err");
@@ -785,19 +785,19 @@ void nurse_view(char* nurse_ID) {
 		printf("\n");
 		printf("\n");
 		printf("\n");
-		printf("\t\t\t************ %s ************\n", ID);   //°£È£»ç id °£È£»çÀÌ¸§ ¹Ş¾Æ¿Í¼­ ¶ç¿ì±â
-		printf("\t\t\t1. È¯ÀÚ °Ë»çºñ¿ë ÀÔ·Â\n");
-		printf("\t\t\t2. È¯ÀÚ ÀÔ¿øºñ¿ë ÀÔ·Â \n");
-		printf("\t\t\t3. Á¾·á \n");
-		printf("\t\t\t¿øÇÏ´Â ¸Ş´º¸¦ ¼±ÅÃÇÏ¼¼¿ä : ");
+		printf("\t\t\t************ %s ************\n", ID);   //ê°„í˜¸ì‚¬ id ê°„í˜¸ì‚¬ì´ë¦„ ë°›ì•„ì™€ì„œ ë„ìš°ê¸°
+		printf("\t\t\t1. í™˜ì ê²€ì‚¬ë¹„ìš© ì…ë ¥\n");
+		printf("\t\t\t2. í™˜ì ì…ì›ë¹„ìš© ì…ë ¥ \n");
+		printf("\t\t\t3. ì¢…ë£Œ \n");
+		printf("\t\t\tì›í•˜ëŠ” ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš” : ");
 		scanf("%d", &choice_num);
 
 		switch (choice_num) {
 		case 1:
-			insert_bill();      //È¯ÀÚÀÇ Áø·á ºñ¿ë ÀÔ·ÂÇÏ´Â ÇÔ¼ö.
+			insert_bill();      //í™˜ìì˜ ì§„ë£Œ ë¹„ìš© ì…ë ¥í•˜ëŠ” í•¨ìˆ˜.
 			break;
 		case 2:
-			insert_Hbill();     //È¯ÀÚÀÇ ÀÔ¿ø ºñ¿ëÀ» ÀÔ·ÂÇÏ´Â ÇÔ¼ö.
+			insert_Hbill();     //í™˜ìì˜ ì…ì› ë¹„ìš©ì„ ì…ë ¥í•˜ëŠ” í•¨ìˆ˜.
 		case 3:
 			exit(1);
 		}
@@ -815,10 +815,10 @@ void insert_bill() {
 	qry_PID = (char*)malloc(sizeof(char) * 20);
 	qry_bill = (char*)malloc(sizeof(char) * 20);
 
-	printf("È¯ÀÚ ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("í™˜ì ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	scanf("%s", qry_PID);
 
-	printf("°Ë»ç ºñ¿ëÀ» ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("ê²€ì‚¬ ë¹„ìš©ì„ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	scanf("%s", qry_bill);
 
 
@@ -831,7 +831,7 @@ void insert_bill() {
 		printf("send query err");
 	}
 
-	printf("µ¹¾Æ°¡·Á¸é x ¸¦ ÀÔ·ÂÇÏ½Ã¿À :");
+	printf("ëŒì•„ê°€ë ¤ë©´ x ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ :");
 	while (1) {
 		scanf("%c", &ch);
 		if (ch == 'x') {
@@ -852,10 +852,10 @@ void insert_Hbill() {
 	qry_PID = (char*)malloc(sizeof(char) * 20);
 	qry_Hbill = (char*)malloc(sizeof(char) * 20);
 
-	printf("È¯ÀÚ ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("í™˜ì ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	scanf("%s", qry_PID);
 
-	printf("ÀÔ¿ø ºñ¿ëÀ» ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("ì…ì› ë¹„ìš©ì„ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	scanf("%s", qry_Hbill);
 
 
@@ -868,7 +868,7 @@ void insert_Hbill() {
 		printf("send query err");
 	}
 
-	printf("µ¹¾Æ°¡·Á¸é x ¸¦ ÀÔ·ÂÇÏ½Ã¿À :");
+	printf("ëŒì•„ê°€ë ¤ë©´ x ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ :");
 	while (1) {
 		scanf("%c", &ch);
 		if (ch == 'x') {
@@ -906,12 +906,12 @@ char* compare_exist(char* ID) {
 	while (row = mysql_fetch_row(res)) {
 		for (i = 0; i < row_length; i++) {
 			//	printf("%s   ", row[i]);
-			if (strcmp(ID, row[i]) == 0)     //¾ÆÀÌµğ°¡ Á¸ÀçÇÏ´ÂÁö ºñ±³ÇÏ´Â ºÎºĞ
+			if (strcmp(ID, row[i]) == 0)     //ì•„ì´ë””ê°€ ì¡´ì¬í•˜ëŠ”ì§€ ë¹„êµí•˜ëŠ” ë¶€ë¶„
 				return row[i];
 		}
 	}
 	mysql_free_result(res);
 
-	printf("ID °¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù.\n");
+	printf("ID ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");
 	return "0";
-}   //·Î±×ÀÎ ÇÒ¶§ µ¥ÀÌÅÍº£ÀÌ½º ¾È¿¡ ÇØ´ç ¾ÆÀÌµğ°¡ ÀÖ´ÂÁö ºñ±³ÇÏ´Â ÇÔ¼ö.
+}   //ë¡œê·¸ì¸ í• ë•Œ ë°ì´í„°ë² ì´ìŠ¤ ì•ˆì— í•´ë‹¹ ì•„ì´ë””ê°€ ìˆëŠ”ì§€ ë¹„êµí•˜ëŠ” í•¨ìˆ˜.
