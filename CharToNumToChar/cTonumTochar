@@ -1,0 +1,52 @@
+/*
+남극 대륙에 있는 미지의 나라 두둥국에서는 아라비아 숫자가 없어 문자
+'a'가 숫자 0, 'b'는 1, ... 'j'는 9를 나타낸다고 한다. 예를 들어 숫자
+23은 "cd"로 표시한다. 이 때 이 수 체계로 곱셈을 하는 함수 
+char* StrangeMultiplication(char* m, char* n)
+을 프로그램 하시오. 예를 들어, StrangeMultiplication(“bc”, “de”)
+는 string "eai"를 결과로 반환한다.
+*/
+
+#include <stdio.h>
+
+#define std 97
+
+char* CtoNproductNtoC(char* m, char* n) {
+    //m,n의 자릿수 구하기
+    int m_Len = sizeof(m) / 4;
+    int n_Len = sizeof(n) / 4;
+
+    char m_cont[30] = "";
+    char n_cont[30] = "";
+
+    int num;
+    for (int i = 0; i < m_Len; i++) {        
+        num = m[i]-std;
+        m_cont[i] = num+'0';
+    }
+    for (int i = 0; i < n_Len; i++) {
+        num = n[i] - std;
+        n_cont[i] = num + '0';
+    }
+    int m_num;
+    int n_num;
+    sscanf(m_cont, "%d", &m_num);
+    sscanf(n_cont, "%d", &n_num);
+
+    int result_num = m_num * n_num;
+    char result_ch[30] = "";
+    sprintf(result_ch,"%d",result_num);
+
+    int last_cnt = strlen(result_ch);
+    char last_result[30] = "";
+    for (int i = 0; i < last_cnt; i++) {
+        last_result[i] = result_ch[i]+49;
+    }
+    printf("%s", last_result);
+    
+}
+
+int main() {
+    
+    CtoNproductNtoC("bc","de");
+}
